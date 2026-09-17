@@ -27,12 +27,15 @@ const app=express()
 
 // require('dotenv').config({path:'./env'})
 import dotenv from 'dotenv'
+import {app} from './app.js'
 
 import connectDB from "./db/index.js";
 
 dotenv.config({
     path:'./.env'
 });
+
+
 
 connectDB()
 .then(()=>{
@@ -43,7 +46,7 @@ connectDB()
 
 /// ASSIGNMENT write app.on for this 
 .catch((err)=>{
-    console.log("mongo db connection failed",err);
+    console.log("mongo db connection failed !!!",err);
 })
 
 
